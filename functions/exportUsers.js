@@ -26,12 +26,12 @@ const db = getDatabase(app);
 
 var NAME = document.getElementById("name");
 var LAST_NAME = document.getElementById("surname");
-var TITLE = document.getElementById("title");
+//var PASSWORD = document.getElementById("password");
+//var STATUS = document.getElementById("name");
 var DEPARTMENT = document.getElementById("department");
+var TITLE = document.getElementById("title");
 var SUBDEPARTMENT = document.getElementById("subdepartment");
-var SECTION = document.getElementById("section");
 var REGISTER_BUTTON = document.getElementById("register");
-
 REGISTER_BUTTON.onclick = function () {
   let allAreFilled = true;
   document
@@ -55,14 +55,9 @@ async function newUser() {
   var count = await get(child(data, "count/users/"));
 
   var SUBDEP;
-  var SECT;
   
   if (SUBDEPARTMENT.options[SUBDEPARTMENT.selectedIndex].text === "Subdepartment") {
    SUBDEP = DEPARTMENT.options[DEPARTMENT.selectedIndex].text;
-  }
-  
-    if (SECTION.options[SECTION.selectedIndex].text === "Section") {
-   SECT = SUBDEPARTMENT.options[SUBDEPARTMENT.selectedIndex].text;
   }
 
 
@@ -73,11 +68,11 @@ async function newUser() {
   set(ref(db, `users/${count.val()}/`), {
     GivenName: NAME.value,
     Surname: LAST_NAME.value,
-    Title: TITLE.options[TITLE.selectedIndex].text,
-    Department: DEPARTMENT.options[DEPARTMENT.selectedIndex].text,
-    SubDepartment: SUBDEP,
     AccountPassword: "DataIt2022!",
     Enabled: true,
+    Department: DEPARTMENT.options[DEPARTMENT.selectedIndex].text,
+    SubDepartment: SUBDEP,
+    Title: TITLE.options[TITLE.selectedIndex].text,
     Confirm: false,
   });
 }

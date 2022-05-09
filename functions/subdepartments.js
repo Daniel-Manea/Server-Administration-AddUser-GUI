@@ -5,12 +5,12 @@ $(document).on("ready", function () {
     if (el.val() === "") {
       document.getElementById("subdep_container").style.display = "none";
       $("#subdepartment").empty();
-      $("#section").empty();
-      document.getElementById("section_container").style.display = "none";
+      $("#subject").empty();
+      document.getElementById("subject_container").style.display = "none";
     } else {
-      document.getElementById("section_container").style.display = "none";
+      document.getElementById("subject_container").style.display = "none";
       $("#subdepartment").empty();
-      $("#section").empty();
+      $("#subject").empty();
       document.getElementById("subdep_container").style.display = "block";
     }
 
@@ -32,53 +32,53 @@ $(document).on("ready", function () {
   $("#subdepartment").on("change", function () {
     var el = $(this);
     if (el.val() === "") {
-      $("#section").empty();
-      document.getElementById("section_container").style.display = "none";
+      $("#subject").empty();
+      document.getElementById("subject_container").style.display = "none";
     } else {
-      $("#section").empty();
-      document.getElementById("section_container").style.display = "block";
+      $("#subject").empty();
+      document.getElementById("subject_container").style.display = "block";
     }
 
     if (el.val() === "UNG_GYMNASIUM_AARHUS_C") {
-      $("#section").append(
+      $("#subject").append(
         "<option  value=''>Charge</option>,<option  value=''>AARHUS GYMNASIUM, Aarhus C</option>"
       );
     } else if (el.val() === "UNG_GYMNASIUM_TILST") {
-      $("#section").append(
+      $("#subject").append(
         "<option  value=''>Charge</option>,<option  value=''>AARHUS GYMNASIUM, Tilst</option>"
       );
     } else if (el.val() === "UNG_GYMNASIUM_SYD") {
-      $("#section").append(
+      $("#subject").append(
         "<option  value=''>Charge</option>,<option  value=''>AARHUS GYMNASIUM, Skanderborg</option>,<option  value=''>AARHUS GYMNASIUM, Viby</option>"
       );
     } else if (el.val() === "UNG_EUX") {
-      $("#section").append(
+      $("#subject").append(
         "<option  value=''>Charge</option>,<option  value=''>Campus Syd</option>,<option  value=''>Campus Nord</option>"
       );
     }
 
     if (el.val() === "ERHV_STUDIESERVICE") {
-      $("#section").append(
+      $("#subject").append(
         "<option  value=''>Charge</option>,<option  value=''>Skolehjemmet</option>"
       );
     } else if (el.val() === "ERHV_BYGGERI") {
-      $("#section").append(
+      $("#subject").append(
         "<option  value=''>Charge</option>,<option  value=''>Byggeri og snedkeri</option>"
       );
     } else if (el.val() === "ERHV_TEKNIK") {
-      $("#section").append(
+      $("#subject").append(
         "<option  value=''>Charge</option>,<option  value=''>Metal og teknik</option>"
       );
     } else if (el.val() === "ERHV_GASTRONOMI") {
-      $("#section").append(
+      $("#subject").append(
         "<option  value=''>Charge</option>,<option  value=''>Kantinen, Aarhus C</option>,<option  value=''>Gastronom, bager og konditor</option>"
       );
     } else if (el.val() === "ERHV_TRANSPORT") {
-      $("#section").append(
+      $("#subject").append(
         "<option  value=''>Charge</option>,<option  value=''>Transport og logistik</option>,<option  value=''>Media og design</option>,<option  value=''>Facility services</option>"
       );
     } else if (el.val() === "ERHV_TEKNOLOGI") {
-      $("#section").append(
+      $("#subject").append(
         "<option  value=''>Charge</option>,<option  value=''>Mekaniker og elektriker</option>,<option  value=''>IT og elektronik</option>"
       );
     }
